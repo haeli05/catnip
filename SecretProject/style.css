@@ -211,18 +211,15 @@ a:hover{text-decoration: none; cursor:pointer;}
 	font-size: 9rem;
 }
 #ico h1{
-	font-size: 8rem;
-}
-#bloc-7 h1{
 	font-size: 10rem;
 }
-#bloc-7 h5{
+#ico h5{
 	font-size: 3rem;
 }
-#bloc-7 h3{
+#ico h3{
 	font-size: 3rem;
 }
-#bloc-7 p{
+#ico p{
 	font-size: 2rem;
 }
 #kittylove h2{
@@ -237,10 +234,10 @@ a:hover{text-decoration: none; cursor:pointer;}
 #roadmap h1{
 	font-size: 6rem;
 }
-#bloc-10 h3{
+#bloc-9 h3{
 	font-size: 9rem;
 }
-#bloc-10 p{
+#bloc-9 p{
 	font-size: 3rem;
 }
 #features h2{
@@ -252,16 +249,16 @@ a:hover{text-decoration: none; cursor:pointer;}
 #gold h5{
 	font-size: 6rem;
 }
+#bloc-12 h3{
+	font-size: 3rem;
+}
+#bloc-12 p{
+	font-size: 2rem;
+}
 #bloc-13 h3{
 	font-size: 3rem;
 }
 #bloc-13 p{
-	font-size: 2rem;
-}
-#bloc-14 h3{
-	font-size: 3rem;
-}
-#bloc-14 p{
 	font-size: 2rem;
 }
 #team h2{
@@ -270,10 +267,13 @@ a:hover{text-decoration: none; cursor:pointer;}
 #team p{
 	font-family: Ubuntu;
 }
-#bloc-18 h3{
+#bloc-17 h3{
 	font-size: 6rem;
 }
-#bloc-20 h6{
+#bloc-19 h6{
+	font-size: 2rem;
+}
+#bloc-19 h1{
 	font-size: 1rem;
 }
 
@@ -423,18 +423,6 @@ nav .caret{
 	margin-top:10px;
 	margin-bottom:40px;
 }
-img.mg-sm,img.mg-md,img.mg-lg{
-	margin-top: 0;
-}
-img.mg-sm{
-	margin-bottom:10px;
-}
-img.mg-md{
-	margin-bottom:30px;
-}
-img.mg-lg{
-	margin-bottom:50px;
-}
 
 /* = Buttons
 -------------------------------------------------------------- */
@@ -458,9 +446,6 @@ button{
 
 /* = Icons
 -------------------------------------------------------------- */
-.icon-sm{
-	font-size:18px!important;
-}
 .icon-md{
 	font-size:30px!important;
 }
