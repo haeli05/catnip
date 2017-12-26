@@ -213,6 +213,18 @@ a:hover{text-decoration: none; cursor:pointer;}
 #ico h1{
 	font-size: 8rem;
 }
+#bloc-7 h1{
+	font-size: 10rem;
+}
+#bloc-7 h5{
+	font-size: 3rem;
+}
+#bloc-7 h3{
+	font-size: 3rem;
+}
+#bloc-7 p{
+	font-size: 2rem;
+}
 #kittylove h2{
 	font-size: 5.5rem;
 }
@@ -220,18 +232,6 @@ a:hover{text-decoration: none; cursor:pointer;}
 	font-size: 3rem;
 }
 #kittylove p{
-	font-size: 2rem;
-}
-#bloc-8 h1{
-	font-size: 10rem;
-}
-#bloc-8 h5{
-	font-size: 3rem;
-}
-#bloc-8 h3{
-	font-size: 3rem;
-}
-#bloc-8 p{
 	font-size: 2rem;
 }
 #roadmap h1{
@@ -270,10 +270,10 @@ a:hover{text-decoration: none; cursor:pointer;}
 #team p{
 	font-family: Ubuntu;
 }
-#bloc-19 h3{
+#bloc-18 h3{
 	font-size: 6rem;
 }
-#bloc-21 h6{
+#bloc-20 h6{
 	font-size: 1rem;
 }
 
