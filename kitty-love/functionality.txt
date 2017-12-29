@@ -1,0 +1,10 @@
+Kitty-Love Contract will need to be able to do the following things:
+
+1. Transfer Ownership- To & From
+2. Have "Constant" type soft and hard limits on ethereum amounts to be raised
+3. Automatically return all ethereum tokens
+3.5 If soft cap met and hard cap not met, function to return all ethereum
+4. Stop sale after predefined ico finished
+5. Modify ico time
+6. Increase token amount
+7. Decrease token amount 
