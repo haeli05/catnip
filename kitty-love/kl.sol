@@ -1,15 +1,30 @@
 pragma solidity ^0.4.16;
 
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+contract owned {
+	address public owner;
 
-contract TokenERC20 {
+	function owned() public{
+		owner = msg.sender;
+	}
+
+	modifier onlyOwner {
+		require(msg.sender == owner);
+		_;
+	}
+
+	function transferOwnership(address newOwner)public onlyOwner {
+		owner = newOwner;
+	}
+}
+contract TokenERC20 is owned{
 	// Public variables of the token
-	string public name;
-	string public symbol;
-	uint8 public decimals = 18;
+	string public name="KL-Test";
+	string public symbol="KL-500";
+	uint8 public decimals = 0;
 	// 18 decimals is the strongly suggested default, avoid changing it
-	uint256 public totalSupply;
-
+	uint256 public totalSupply=100;
+	address master = 0x6c6916db64AeC17ab1f98823cEcEC9414d7591bD;  
 	// This creates an array with all balances
 	mapping (address => uint256) public balanceOf;
 	mapping (address => mapping (address => uint256)) public allowance;
@@ -134,13 +149,13 @@ contract TokenERC20 {
 	}
 
 	/**
-	* Destroy tokens from other account
-	*
-		* Remove `_value` tokens from the system irreversibly on behalf of `_from`.
-		*
-		* @param _from the address of the sender
-	* @param _value the amount of money to burn
-	*/
+	 * Destroy tokens from other account
+	 *
+	 * Remove `_value` tokens from the system irreversibly on behalf of `_from`.
+	 *
+	 * @param _from the address of the sender
+	 * @param _value the amount of money to burn
+	 */
 	function burnFrom(address _from, uint256 _value) public returns (bool success) {
 		require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
 		require(_value <= allowance[_from][msg.sender]);    // Check allowance
@@ -149,6 +164,31 @@ contract TokenERC20 {
 		totalSupply -= _value;                              // Update totalSupply
 		Burn(_from, _value);
 		return true;
+	}
+	function increaseSupply(uint value, address to) public returns (bool) {
+		totalSupply = safeAdd(totalSupply, value);
+		balanceOf[master] = safeAdd(balanceOf[master], value);
+		Transfer(0, to, value);
+		return true;
+	}
+	function safeAdd(uint a, uint b)pure internal returns (uint) {
+		if (a + b < a) { return; }
+		return a + b;
+	}
+	//Function decreases supply
+	function decreaseSupply(uint value, address from)public returns (bool) {
+		balanceOf[master] = safeSub(balanceOf[master], value);
+		totalSupply = safeSub(totalSupply, value);  
+		Transfer(from, 0, value);
+		return true;
+	}
+
+	function safeSub(uint a, uint b)pure internal returns (uint) {
+		if (b > a) { return; }
+		return a - b;
+	}
+	function checkBalance()view public returns (uint){
+		return totalSupply;
 	}
 }
 

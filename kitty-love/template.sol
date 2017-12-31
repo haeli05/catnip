@@ -1,8 +1,22 @@
 pragma solidity ^0.4.16;
 
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
+contract owned{
+	address public owner;
+	function owned() {
+		owner = msg.sender;
+	}
 
-contract TokenERC20 {
+	modifier onlyOwner {
+		require(msg.sender == owner);
+		_;
+	}
+
+	function transferOwnership(address newOwner) onlyOwner {
+		owner = newOwner;
+	}
+}
+contract TokenERC20 is owned {
 	// Public variables of the token
 	string public name;
 	string public symbol;
