@@ -4,11 +4,12 @@ import "./kl.sol";
 import '../node_modules/zeppelin-solidity/contracts/math/SafeMath.sol';
 import "../node_modules/zeppelin-solidity/contracts/crowdsale/RefundVault.sol";
 import "../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol";
+import "../node_modules/zeppelin-solidity/contracts/lifecycle/Pausable.sol";
 contract Crowdsale is Ownable{
 	using SafeMath for uint256;
 
 	// The token being sold
-	kl public token;
+	klrink public token;
 
 	// start and end timestamps where investments are allowed (both inclusive)
 	uint256 public startTime;
@@ -22,7 +23,6 @@ contract Crowdsale is Ownable{
 
 	// amount of raised money in wei
 	uint256 public weiRaised;
-
 	uint256 public goal=8;
 	RefundVault public vault;
 	bool public isFinalized = false;
@@ -37,7 +37,8 @@ contract Crowdsale is Ownable{
 	 * @param amount amount of tokens purchased
 	 */
 	event TokenPurchase(address indexed purchaser, address indexed beneficiary, uint256 value, uint256 amount);
-
+	event UpdatedEndTime(uint256 indexed newTime);
+	event ClaimRefund();
 
 	function Crowdsale(uint256 _goal,uint256 _startTime, uint256 _endTime, uint256 _rate, address _wallet) public {
 		require(_startTime >= now);
@@ -56,10 +57,11 @@ contract Crowdsale is Ownable{
 		goal = _goal;
 	}
 
-	function createTokenContract() internal returns (kl) {
-		return new kl();
+	function createTokenContract() internal returns (klrink) {
+		return new klrink();
 	}
 	function () external payable {
+		
 		buyTokens(msg.sender);
 	}
 	function buyTokens(address beneficiary) public payable {
@@ -71,7 +73,6 @@ contract Crowdsale is Ownable{
 		uint256 tokens = weiAmount.mul(rate);
 
 		weiRaised = weiRaised.add(weiAmount);
-
 		token.mint(beneficiary, tokens);
 		TokenPurchase(msg.sender, beneficiary, weiAmount, tokens);
 
@@ -96,7 +97,10 @@ contract Crowdsale is Ownable{
 		vault.deposit.value(msg.value)(msg.sender);
 	}
 
-
+	function good() public view returns(bool){
+		return now >= startTime && now<= endTime;
+	}	
+	
 	function goalReached() public view returns (bool) {
 		return weiRaised >= goal;
  	} 
@@ -106,6 +110,7 @@ contract Crowdsale is Ownable{
 		require(!goalReached());
 
 		vault.refund(msg.sender);
+		ClaimRefund();
 	}
 
 	function finalize() onlyOwner public {
@@ -117,7 +122,10 @@ contract Crowdsale is Ownable{
 		isFinalized = true;
 	}
 
-
+	function updateEndTime(uint256 newTime) onlyOwner public{
+		endTime = newTime;
+		UpdatedEndTime(newTime);
+	}
 
 	// vault finalization task, called when owner calls finalize()
 	function finalization() internal {
