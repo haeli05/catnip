@@ -1,0 +1,47 @@
+INFO [01-09|20:45:52] Starting peer-to-peer node               instance=Geth/v1.7.3-stable/darwin-amd64/go1.9.2
+INFO [01-09|20:45:52] Allocated cache and file handles         database=/Users/candres252/Library/Ethereum/rinkeby/geth/chaindata cache=128 handles=1024
+INFO [01-09|20:45:52] Initialised chain configuration          config="{ChainID: 4 Homestead: 1 DAO: <nil> DAOSupport: true EIP150: 2 EIP155: 3 EIP158: 3 Byzantium: 1035301 Engine: clique}"
+INFO [01-09|20:45:52] Initialising Ethereum protocol           versions="[63 62]" network=4
+INFO [01-09|20:45:52] Loaded most recent local header          number=1565267 hash=f1021e…619eb5 td=2925680
+INFO [01-09|20:45:52] Loaded most recent local full block      number=1565267 hash=f1021e…619eb5 td=2925680
+INFO [01-09|20:45:52] Loaded most recent local fast block      number=1565267 hash=f1021e…619eb5 td=2925680
+INFO [01-09|20:45:52] Loaded local transaction journal         transactions=21 dropped=21
+INFO [01-09|20:45:52] Regenerated local transaction journal    transactions=0  accounts=0
+WARN [01-09|20:45:52] Blockchain not empty, fast sync disabled 
+INFO [01-09|20:45:52] Starting P2P networking 
+INFO [01-09|20:45:55] UDP listener up                          self=enode://545f3d9eded4e2f8caed58ad2943d78b32a2a1679021c33cfc4a5801a609b54f6f069cced8fb48211a97f210791e204f3b80f71cdc0063a1630294967041fb07@[::]:30303
+INFO [01-09|20:45:55] RLPx listener up                         self=enode://545f3d9eded4e2f8caed58ad2943d78b32a2a1679021c33cfc4a5801a609b54f6f069cced8fb48211a97f210791e204f3b80f71cdc0063a1630294967041fb07@[::]:30303
+INFO [01-09|20:45:55] IPC endpoint opened: /Users/candres252/Library/Ethereum/rinkeby/geth.ipc 
+INFO [01-09|20:46:25] Block synchronisation started 
+INFO [01-09|20:46:25] Imported new chain segment               blocks=2 txs=5 mgas=0.189 elapsed=18.050ms mgasps=10.478 number=1565269 hash=3e4300…c3f3fb
+INFO [01-09|20:46:25] Imported new chain segment               blocks=2 txs=4 mgas=0.419 elapsed=25.786ms mgasps=16.265 number=1565271 hash=343f29…2e16ab
+INFO [01-09|20:46:35] Imported new chain segment               blocks=1 txs=2 mgas=0.070 elapsed=4.440ms  mgasps=15.697 number=1565271 hash=439a8d…7bd21a
+INFO [01-09|20:46:35] Imported new chain segment               blocks=1 txs=5 mgas=5.558 elapsed=10.862ms mgasps=511.633 number=1565272 hash=c4e17c…d0fddb
+INFO [01-09|20:46:51] Imported new chain segment               blocks=1 txs=0 mgas=0.000 elapsed=1.156ms  mgasps=0.000   number=1565273 hash=07aaea…43536c
+INFO [01-09|20:47:05] Imported new chain segment               blocks=1 txs=2 mgas=0.301 elapsed=5.111ms  mgasps=58.842  number=1565274 hash=fa436a…d498a9
+INFO [01-09|20:47:20] Imported new chain segment               blocks=1 txs=1 mgas=1.706 elapsed=2.094ms  mgasps=814.527 number=1565275 hash=4f6ae8…1af46a
+INFO [01-09|20:47:36] Imported new chain segment               blocks=1 txs=2 mgas=0.065 elapsed=2.776ms  mgasps=23.348  number=1565276 hash=52acf5…6336d5
+INFO [01-09|20:47:51] Imported new chain segment               blocks=1 txs=0 mgas=0.000 elapsed=638.122µs mgasps=0.000   number=1565277 hash=bcba1c…bc05b1
+INFO [01-09|20:48:05] Imported new chain segment               blocks=1 txs=2 mgas=0.278 elapsed=4.137ms   mgasps=67.180  number=1565278 hash=2035d7…c35659
+INFO [01-09|20:48:21] Imported new chain segment               blocks=1 txs=1 mgas=0.059 elapsed=1.879ms   mgasps=31.617  number=1565279 hash=00a0b0…26478d
+INFO [01-09|20:48:35] Imported new chain segment               blocks=1 txs=4 mgas=0.162 elapsed=4.738ms   mgasps=34.118  number=1565280 hash=8273cd…985f7d
+INFO [01-09|20:48:50] Imported new chain segment               blocks=1 txs=2 mgas=0.065 elapsed=3.645ms   mgasps=17.783  number=1565281 hash=d780ec…4e130e
+INFO [01-09|20:49:05] Imported new chain segment               blocks=1 txs=3 mgas=0.399 elapsed=11.639ms  mgasps=34.257  number=1565282 hash=bcc5cb…a07161
+INFO [01-09|20:49:06] Imported new chain segment               blocks=1 txs=3 mgas=0.399 elapsed=8.405ms   mgasps=47.438  number=1565282 hash=5efb72…103c10
+INFO [01-09|20:49:21] Imported new chain segment               blocks=1 txs=3 mgas=0.823 elapsed=9.033ms   mgasps=91.066  number=1565283 hash=7ab51f…68cbf2
+INFO [01-09|20:49:35] Imported new chain segment               blocks=1 txs=2 mgas=0.058 elapsed=6.505ms   mgasps=8.850   number=1565284 hash=ec46bf…c23aa3
+INFO [01-09|20:49:51] Imported new chain segment               blocks=1 txs=2 mgas=2.425 elapsed=7.640ms   mgasps=317.347 number=1565285 hash=f338e8…5afde8
+INFO [01-09|20:50:06] Imported new chain segment               blocks=1 txs=4 mgas=0.362 elapsed=8.297ms   mgasps=43.598  number=1565286 hash=10a655…fcb730
+INFO [01-09|20:50:20] Imported new chain segment               blocks=1 txs=1 mgas=0.027 elapsed=1.747ms   mgasps=15.442  number=1565287 hash=d8ffe5…9f1434
+INFO [01-09|20:50:36] Imported new chain segment               blocks=1 txs=2 mgas=0.045 elapsed=2.779ms   mgasps=16.016  number=1565288 hash=37b10b…324559
+INFO [01-09|20:50:50] Imported new chain segment               blocks=1 txs=2 mgas=3.053 elapsed=3.236ms   mgasps=943.197 number=1565289 hash=b5b5ce…3245cc
+INFO [01-09|20:50:50] Imported new chain segment               blocks=1 txs=2 mgas=3.053 elapsed=2.648ms   mgasps=1152.529 number=1565289 hash=8b7b3d…ad2e95
+INFO [01-09|20:51:05] Imported new chain segment               blocks=1 txs=8 mgas=0.566 elapsed=15.579ms  mgasps=36.299   number=1565290 hash=cc96b8…ec0145
+INFO [01-09|20:51:07] Imported new chain segment               blocks=1 txs=8 mgas=0.566 elapsed=10.588ms  mgasps=53.413   number=1565290 hash=5ae406…e3bf3c
+INFO [01-09|20:51:20] Imported new chain segment               blocks=1 txs=4 mgas=0.464 elapsed=9.628ms   mgasps=48.237   number=1565291 hash=8c75df…0c28bf
+INFO [01-09|20:51:21] IPC endpoint closed: /Users/candres252/Library/Ethereum/rinkeby/geth.ipc 
+INFO [01-09|20:51:21] Blockchain manager stopped 
+INFO [01-09|20:51:21] Stopping Ethereum protocol 
+INFO [01-09|20:51:21] Ethereum protocol stopped 
+INFO [01-09|20:51:21] Transaction pool stopped 
+INFO [01-09|20:51:21] Database closed                          database=/Users/candres252/Library/Ethereum/rinkeby/geth/chaindata

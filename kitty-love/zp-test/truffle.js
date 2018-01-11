@@ -1,3 +1,4 @@
+require('babel-register')
 module.exports = {
 	// See <http://truffleframework.com/docs/advanced/configuration>
 	// to customize your Truffle configuration!
@@ -11,14 +12,9 @@ module.exports = {
 		rinkeby: {
 			host: "localhost", // Connect to geth on the specified
 			port: 8545,
-			from: "6c6916db64aec17ab1f98823cecec9414d7591bd",
 			network_id: 4,
-			gas: 4612388 // Gas limit used for deploys
-		},
-		solc: {
-			optimizer: {
-				enabled: true,
-			}
+			gas: 6612388,
+			from: "6c6916db64aec17ab1f98823cecec9414d7591bd"
 		}
 	}
 };

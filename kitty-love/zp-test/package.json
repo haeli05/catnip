@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-register": "^6.26.0",
     "zeppelin-solidity": "^1.5.0"
   }
 }

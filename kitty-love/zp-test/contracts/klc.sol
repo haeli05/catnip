@@ -1,15 +1,14 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.16;
 
 import "./kl.sol";
 import '../node_modules/zeppelin-solidity/contracts/math/SafeMath.sol';
 import "../node_modules/zeppelin-solidity/contracts/crowdsale/RefundVault.sol";
 import "../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol";
-import "../node_modules/zeppelin-solidity/contracts/lifecycle/Pausable.sol";
 contract Crowdsale is Ownable{
 	using SafeMath for uint256;
 
 	// The token being sold
-	klrink public token;
+	klrinkeby public token;
 
 	// start and end timestamps where investments are allowed (both inclusive)
 	uint256 public startTime;
@@ -57,8 +56,8 @@ contract Crowdsale is Ownable{
 		goal = _goal;
 	}
 
-	function createTokenContract() internal returns (klrink) {
-		return new klrink();
+	function createTokenContract() internal returns (klrinkeby) {
+		return new klrinkeby();
 	}
 	function () external payable {
 		
