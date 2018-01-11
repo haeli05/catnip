@@ -7,6 +7,5 @@ module.exports = function(deployer, network, accounts) {
 		const startTime= web3.eth.getBlock(web3.eth.blockNumber).timestamp+120;
 		const endTime = startTime+(60*60*48); // 60 seconds * 60  = 60 minutes *48 = 48 hours
 		const rate = 1;
-		deployer.deploy(kl)
 		deployer.deploy(crowdsale, goal,startTime, endTime, rate, wallet)
 };

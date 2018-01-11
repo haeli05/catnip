@@ -1,9 +1,9 @@
 pragma solidity ^0.4.16;
 
 import "../node_modules/zeppelin-solidity/contracts/token/MintableToken.sol"; 
-contract klrinkeby is MintableToken {
-	string  public name="klrinkeby";
-	string  public symbol="klrinkeby";
+contract kl8 is MintableToken {
+	string  public name="kl8";
+	string  public symbol="kl8";
 	uint8 public decimals=18;
 	uint256  public totalSupply=100;
 

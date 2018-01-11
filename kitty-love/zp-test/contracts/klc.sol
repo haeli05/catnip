@@ -8,7 +8,7 @@ contract Crowdsale is Ownable{
 	using SafeMath for uint256;
 
 	// The token being sold
-	klrinkeby public token;
+	kl8 public token;
 
 	// start and end timestamps where investments are allowed (both inclusive)
 	uint256 public startTime;
@@ -22,7 +22,7 @@ contract Crowdsale is Ownable{
 
 	// amount of raised money in wei
 	uint256 public weiRaised;
-	uint256 public goal=8;
+	uint256 public goal;
 	RefundVault public vault;
 	bool public isFinalized = false;
 
@@ -56,11 +56,10 @@ contract Crowdsale is Ownable{
 		goal = _goal;
 	}
 
-	function createTokenContract() internal returns (klrinkeby) {
-		return new klrinkeby();
+	function createTokenContract() internal returns (kl8) {
+		return new kl8();
 	}
 	function () external payable {
-		
 		buyTokens(msg.sender);
 	}
 	function buyTokens(address beneficiary) public payable {
@@ -79,7 +78,8 @@ contract Crowdsale is Ownable{
 	}
 
 	function ForwardFunds() internal {
-		wallet.transfer(msg.value);
+		if(isFinalized && goalReached()) wallet.transfer(msg.value);
+		else forwardFunds();
 	}
 
 	function validPurchase() internal view returns (bool) {
