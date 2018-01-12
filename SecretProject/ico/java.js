@@ -170,20 +170,17 @@ var abi=[
 
 var cAddress = "0x414af059bbeeb2e6d3a8f1b3736f41b1234a00e9";
 window.addEventListener('load', function() {
-
 	// Checking if Web3 has been injected by the browser (Mist/MetaMask)
 	if (typeof web3 !== 'undefined') {
 		// Use Mist/MetaMask's provider
-		//web3js = new Web3(web3.currentProvider);
-		var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-		console.log('No web3? You should consider trying MetaMask!')
+		web3js = new Web3(web3.currentProvider);
+		//var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
 	} else {
-		console.log('No web3? You should consider trying MetaMask!')
+			alert("Don't have MetaMask? Just Send Ether to the address listed below!")
+			console.log('No web3? You should consider trying MetaMask!')
 			// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-			web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 	}
-
 	// Now you can start your app & access web3 freely:
 	startApp()
 
@@ -191,8 +188,10 @@ window.addEventListener('load', function() {
 
 
 function startApp(){
+	
+	alert("If you don't have MetaMask send the ether to the address listed below!");
 
-	var version = web3.version.getNetwork;
+	//var version = web3.version.getNetwork;
 	var klc= web3.eth.contract(abi).at(cAddress);
 
 	waitForClick(klc);
